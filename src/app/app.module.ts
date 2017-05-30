@@ -5,14 +5,19 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MdCheckboxModule} from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    MdCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
