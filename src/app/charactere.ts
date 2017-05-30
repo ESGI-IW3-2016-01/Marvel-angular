@@ -1,3 +1,8 @@
-/**
- * Created by alexandre on 30/05/17.
- */
+export class Charactere {
+  id: number;
+  name: string;
+  description: string;
+  comics: string;
+  series: string;
+  stories: string;
+}
