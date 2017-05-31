@@ -6,15 +6,35 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { CharacterDetailComponent } from './character-detail/character-detail.component';
 
+import { RouterModule } from '@angular/router';
+import { TriviaDetailComponent } from './trivia-detail/trivia-detail.component';
+import { SmashDetailComponent } from './smash-detail/smash-detail.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    CharacterDetailComponent
+    CharacterDetailComponent,
+    TriviaDetailComponent,
+    SmashDetailComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      {
+        path: 'character',
+        component: CharacterDetailComponent
+      },
+      {
+        path: 'trivia',
+        component: TriviaDetailComponent
+      },
+      {
+        path: 'smash',
+        component: SmashDetailComponent
+      }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
