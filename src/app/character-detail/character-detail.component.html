@@ -1,3 +1,27 @@
-<p>
-  character-detail works!
-</p>
+<main class="mdl-layout__content">
+  <div class="site-content">
+    <div class="container">
+      <div class="mdl-grid site-max-width">
+
+
+        <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card" *ngFor="let hero of heroes">
+          <div class="mdl-card__media">
+            <img class="article-image" src="{{hero.thumbnail}}" border="0" alt="">
+          </div>
+          <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">{{hero.name}}</h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+            {{hero.description}}
+          </div><br>
+          <div class="mdl-grid mdl-card__actions mdl-card--border">
+            <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card"><h6>Comics</h6>{{hero.comics}}</div>
+            <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card"><h6>Series</h6>{{hero.series}}</div>
+            <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card"><h6>Stories</h6>{{hero.stories}}</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
