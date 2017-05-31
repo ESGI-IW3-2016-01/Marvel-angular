@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CharacterService } from './character.service';
+import {Component} from '@angular/core';
+import {CharacterService} from './character.service';
 import {Md5Service} from './md5.service';
 
 @Component({
@@ -11,6 +11,7 @@ import {Md5Service} from './md5.service';
 
 export class AppComponent {
   title = 'Angular API';
-  // = this.characterService.getHeroes();
-  //constructor(private characterService: CharacterService) { }
+  hero = this.characterService.getHeroById('1009148');
+  constructor(private characterService: CharacterService) {
+  }
 }
