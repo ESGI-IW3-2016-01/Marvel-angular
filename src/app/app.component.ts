@@ -11,6 +11,6 @@ import {Md5Service} from './md5.service';
 
 export class AppComponent {
   title = 'Angular API';
-  heroes = this.characterService.getHeroes();
-  constructor(private characterService: CharacterService) { }
+  // = this.characterService.getHeroes();
+  //constructor(private characterService: CharacterService) { }
 }
