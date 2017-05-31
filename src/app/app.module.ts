@@ -12,6 +12,7 @@ import {MdCheckboxModule} from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { TriviaDetailComponent } from './trivia-detail/trivia-detail.component';
 import { SmashDetailComponent } from './smash-detail/smash-detail.component';
+import {CharacterService} from "./character.service";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { SmashDetailComponent } from './smash-detail/smash-detail.component';
     MdCheckboxModule,
     RouterModule.forRoot([
       {
-        path: 'character',
+        path: 'characters',
         component: CharacterDetailComponent
       },
       {
@@ -41,7 +42,7 @@ import { SmashDetailComponent } from './smash-detail/smash-detail.component';
       }
     ])
   ],
-  providers: [],
+  providers: [CharacterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

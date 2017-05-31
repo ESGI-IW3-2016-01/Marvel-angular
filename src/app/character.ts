@@ -6,4 +6,7 @@ export class Character {
   comics: string[];
   series: string[];
   stories: string[];
+
+  constructor() {
+  }
 }

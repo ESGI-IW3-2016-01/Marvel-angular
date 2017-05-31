@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Marvel API</title>
+  <title>{{ title }}</title>
   <meta name="description" content="Demo of Material design portfolio template by TemplateFlip.com."/>
   <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;amp;lang=en" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Marvel:700" rel="stylesheet">
@@ -15,14 +15,13 @@
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header mdl-layout__header--waterfall site-header">
     <div class="mdl-layout__header-row site-logo-row"><span class="mdl-layout__title">
-            <div class="site-logo"></div><span class="site-description">ANGULAR API</span></span></div>
+            <div class="site-logo"></div><span class="site-description">{{ title }}</span></span></div>
     <div class="mdl-layout__header-row site-navigation-row mdl-layout--large-screen-only">
       <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
         <a class="mdl-navigation__link" routerLink="/character">Characters</a>
         <a class="mdl-navigation__link" routerLink="/trivia">Marvel Trivia</a>
         <a class="mdl-navigation__link" routerLink="/smash">Marvel Smash</a>
       </nav>
-
     </div>
   </header>
   <script src="https://code.getmdl.io/1.3.0/material.min.js" defer></script>
@@ -30,5 +29,6 @@
 <div>
   <router-outlet></router-outlet>
 </div>
+{{ heroes | json }}
 </body>
 </html>
