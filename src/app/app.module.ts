@@ -4,12 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { CharactereDetailComponent } from './charactere-detail/charactere-detail.component';
+import { CharacterDetailComponent } from './character-detail/character-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CharactereDetailComponent
+    CharacterDetailComponent
   ],
   imports: [
     BrowserModule,
