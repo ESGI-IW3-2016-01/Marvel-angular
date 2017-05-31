@@ -1,8 +1,8 @@
-import {Injectable} from '@angular/core';
-import {Http} from '@angular/http';
-import {Md5Service} from './md5.service';
-import {Character} from './character';
-import 'rxjs/Rx';
+import {Injectable} from "@angular/core";
+import {Http} from "@angular/http";
+import {Md5Service} from "./md5.service";
+import {Character} from "./character";
+import "rxjs/Rx";
 
 @Injectable()
 export class CharacterService {
@@ -16,11 +16,17 @@ export class CharacterService {
     return Promise.reject(error.message || error);
   }
 
-  getHeroes(): Promise<Character[]> {
+  getHeroes(limit: number = 9, offset: number = 0): Promise<Character[]> {
 
+    offset = Math.random() * (1475 - 1) + 1;
     const timestamp = Date.now();
     const hash = this.md5Service.md5(timestamp + this.privateKey + this.publicKey);
-    const url = this.heroesUrl + '?ts=' + timestamp + '&apikey=' + this.publicKey + '&hash=' + hash;
+    const url = this.heroesUrl +
+      '?ts=' + timestamp +
+      '&apikey=' + this.publicKey +
+      '&hash=' + hash +
+      '&limit=' + limit +
+      '&offset=' + offset;
 
     return this.http.get(url)
       .toPromise()
