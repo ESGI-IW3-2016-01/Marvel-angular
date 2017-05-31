@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Character} from "../character";
+import {CharacterService} from "../character.service";
 
 const HEROES: Character[] = [
   { id: 11, name: 'Thor',
@@ -41,9 +42,8 @@ const HEROES: Character[] = [
 })
 export class CharacterDetailComponent implements OnInit {
 
-  heroes = HEROES;
-
-  constructor() { }
+  heroes = this.characterService.getHeroes();
+  constructor(private characterService: CharacterService) { }
 
   ngOnInit() {
   }
