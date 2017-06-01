@@ -31,7 +31,6 @@ export class CharacterService {
     return this.http.get(url)
       .toPromise()
       .then((response) => {
-        console.log(response.json().data.results);
         return response.json().data.results.map((value) => {
           const char = new Character();
           char.id = value.id;

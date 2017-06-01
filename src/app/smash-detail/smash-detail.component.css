@@ -1,0 +1,39 @@
+.portfolio-card {
+    width: 250px;
+}
+
+.portfolio-card img {
+    width: 250px;
+}
+
+.versus {
+    vertical-align: middle;
+}
+
+.versus p {
+    font-family: 'Marvel', sans-serif;
+    color: white;
+    display: block;
+    font-size: 50px;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.mdl-card__title-text {
+    font-family: 'Marvel', sans-serif;
+    color: black;
+    display: block;
+    font-size: 25px;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.versus {
+    margin-top: 150px;
+}
+
+.mdl-card__media {
+    background-color: rgb(213,4,23);
+}
