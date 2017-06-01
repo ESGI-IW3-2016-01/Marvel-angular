@@ -9,7 +9,7 @@ import { TriviaService } from '../trivia.service';
 })
 export class TriviaDetailComponent implements OnInit {
 
-  trivia = this.triviaService.getTrivia();
+  trivias = this.triviaService.getTrivia();
   constructor(private triviaService: TriviaService) { }
 
   ngOnInit() {
