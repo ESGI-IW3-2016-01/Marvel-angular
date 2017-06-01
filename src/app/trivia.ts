@@ -3,6 +3,6 @@ export class Trivia {
   type: string;
   difficulty: string;
   question: string;
+  all_answers: string[];
   correct_answer: string;
-  incorrect_answers: string[];
 }

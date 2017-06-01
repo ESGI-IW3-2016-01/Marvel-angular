@@ -17,7 +17,21 @@ export class TriviaService {
     return this.http.get(this.triviaUrl)
       .toPromise()
       .then((response) => {
-        return response.json().results;
+        return response.json().results.map((value) => {
+          const tri = new Trivia();
+          tri.difficulty = value.difficulty;
+          tri.category = value.category;
+          tri.correct_answer = value.correct_answer;
+          tri.question = value.question;
+          tri.type = value.type;
+          tri.all_answers = [];
+          tri.all_answers.push(value.correct_answer);
+          value.incorrect_answers.forEach((element) => {
+            tri.all_answers.push(element);
+          });
+          tri.all_answers.sort();
+          return tri;
+        });
       })
       .catch(TriviaService.handleError);
   }
