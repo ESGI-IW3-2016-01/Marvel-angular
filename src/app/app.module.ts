@@ -13,13 +13,17 @@ import {RouterModule} from '@angular/router';
 import {TriviaDetailComponent} from './trivia-detail/trivia-detail.component';
 import {SmashDetailComponent} from './smash-detail/smash-detail.component';
 import {CharacterService} from './character.service';
+import {CharacterInfoComponent} from './character-info-component/character-info.component';
+import {CharacterPanelComponent} from './character-panel/character-panel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CharacterDetailComponent,
     TriviaDetailComponent,
-    SmashDetailComponent
+    SmashDetailComponent,
+    CharacterInfoComponent,
+    CharacterPanelComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -33,7 +37,17 @@ import {CharacterService} from './character.service';
     RouterModule.forRoot([
       {
         path: 'characters',
-        component: CharacterDetailComponent
+        component: CharacterPanelComponent,
+        children: [
+          {
+            path: '',
+            component: CharacterDetailComponent
+          },
+          {
+            path: ':id',
+            component: CharacterInfoComponent
+          }
+        ]
       },
       {
         path: 'trivia',
@@ -42,6 +56,10 @@ import {CharacterService} from './character.service';
       {
         path: 'smash',
         component: SmashDetailComponent
+      },
+      {
+        path: '**',
+        redirectTo: '/characters'
       }
     ])
   ],

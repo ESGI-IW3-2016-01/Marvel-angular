@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CharacterService} from '../character.service';
-import {MdCardModule, MdButtonModule} from '@angular/material';
+import {Character} from 'app/character';
 
 @Component({
   selector: 'app-character-detail',
@@ -8,7 +8,16 @@ import {MdCardModule, MdButtonModule} from '@angular/material';
   styleUrls: ['./character-detail.component.css']
 })
 export class CharacterDetailComponent implements OnInit {
-  heroes = this.characterService.getHeroes();
+  private heroes: Character[];
+
   constructor(private characterService: CharacterService) {}
-  ngOnInit() {}
+
+  ngOnInit() {
+    this.characterService.getHeroes()
+      .then((data) => {
+        this.heroes = data;
+      }).catch((err) => {
+      console.log(err);
+    });
+  }
 }
