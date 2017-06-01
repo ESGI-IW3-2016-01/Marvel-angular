@@ -1,5 +1,3 @@
-.mdl-card__media {
-    background-color: white;
-    text-align: center;
+img {
+  max-height: 600px;
 }
-
