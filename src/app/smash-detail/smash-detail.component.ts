@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CharacterService} from "../character.service";
 
 @Component({
   selector: 'app-smash-detail',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SmashDetailComponent implements OnInit {
 
-  constructor() { }
+  hero1 = this.characterService.getRandomHero();
+  hero2 = this.characterService.getRandomHero();
+  constructor(private characterService: CharacterService) { }
 
   ngOnInit() {
   }
