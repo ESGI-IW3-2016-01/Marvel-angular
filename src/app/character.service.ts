@@ -36,7 +36,7 @@ export class CharacterService {
           char.id = value.id;
           char.name = value.name;
           char.description = value.description;
-          char.thumbnail = value.thumbnail.path + '/portrait_incredible' + '.' + value.thumbnail.extension;
+          char.thumbnail = value.thumbnail.path + '/detail' + '.' + value.thumbnail.extension;
           return char;
         });
       })

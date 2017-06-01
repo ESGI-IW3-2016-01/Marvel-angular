@@ -1,18 +1,18 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
 
-import { AppComponent } from './app.component';
-import { CharacterDetailComponent } from './character-detail/character-detail.component';
+import {AppComponent} from './app.component';
+import {CharacterDetailComponent} from './character-detail/character-detail.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MdCheckboxModule} from '@angular/material';
+import {MdButtonModule, MdCardModule, MdCheckboxModule, MdGridListModule} from '@angular/material';
 
-import { RouterModule } from '@angular/router';
-import { TriviaDetailComponent } from './trivia-detail/trivia-detail.component';
-import { SmashDetailComponent } from './smash-detail/smash-detail.component';
-import {CharacterService} from "./character.service";
+import {RouterModule} from '@angular/router';
+import {TriviaDetailComponent} from './trivia-detail/trivia-detail.component';
+import {SmashDetailComponent} from './smash-detail/smash-detail.component';
+import {CharacterService} from './character.service';
 
 @NgModule({
   declarations: [
@@ -27,6 +27,9 @@ import {CharacterService} from "./character.service";
     FormsModule,
     HttpModule,
     MdCheckboxModule,
+    MdCardModule,
+    MdGridListModule,
+    MdButtonModule,
     RouterModule.forRoot([
       {
         path: 'characters',
@@ -45,4 +48,5 @@ import {CharacterService} from "./character.service";
   providers: [CharacterService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

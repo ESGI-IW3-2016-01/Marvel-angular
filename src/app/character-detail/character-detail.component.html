@@ -1,26 +1,13 @@
-<main class="mdl-layout__content">
-  <div class="site-content">
-    <div class="container">
-      <div class="mdl-grid site-max-width">
-
-        <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card" *ngFor="let hero of heroes.__zone_symbol__value">
-          <div class="mdl-card__media">
-            <img class="article-image" src="{{hero.thumbnail}}" border="0" alt="">
-          </div>
-          <div class="mdl-card__title">
-            <h2 class="mdl-card__title-text">{{hero.name}}</h2>
-          </div>
-          <div class="mdl-card__supporting-text">
-            {{hero.description}}
-          </div><br>
-          <div class="mdl-grid mdl-card__actions mdl-card--border">
-            <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card"><h6>Comics</h6>{{hero.comics}}</div>
-            <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card"><h6>Series</h6>{{hero.series}}</div>
-            <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card"><h6>Stories</h6>{{hero.stories}}</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</main>
+<md-grid-list [cols]="3" [rowHeight]="700" [gutterSize]="30">
+  <md-grid-tile *ngFor="let hero of heroes.__zone_symbol__value">
+    <md-card class="hero-card">
+      <md-card-header>
+        <md-card-title>{{ hero.name }}</md-card-title>
+      </md-card-header>
+      <img md-card-image src="{{ hero.thumbnail }}">
+      <md-card-actions>
+        <button md-button>MORE</button>
+      </md-card-actions>
+    </md-card>
+  </md-grid-tile>
+</md-grid-list>
