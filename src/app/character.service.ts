@@ -36,19 +36,7 @@ export class CharacterService {
           char.id = value.id;
           char.name = value.name;
           char.description = value.description;
-          char.thumbnail = value.thumbnail.path + '/detail' + '.' + value.thumbnail.extension;
-          value.comics.items.forEach((element) => {
-            char.comics = [];
-            char.comics.push(element.name);
-           });
-           value.series.items.forEach((element) => {
-             char.series = [];
-           char.series.push(element.name);
-           });
-           value.stories.items.forEach((element) => {
-             char.stories = [];
-           char.stories.push(element.name);
-           });
+          char.thumbnail = value.thumbnail.path + '/portrait_incredible' + '.' + value.thumbnail.extension;
           return char;
         });
       })
