@@ -2,42 +2,31 @@
   <div class="site-content">
     <div class="container">
       <div class="mdl-grid site-max-width">
-          <!--<md-grid-list [cols]="3"]>-->
-            <!--<md-grid-tile>-->
-            <button (click)="clicked($event)" md-button>
-              <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card" ng-class="myclass" ng-mouseleave="myclass = 'lowlight'">
-                <div class="mdl-card__media">
-                  <img class="article-image" src="{{hero1[0].thumbnail}}" border="0" alt="">
-                </div>
-                <div class="mdl-card__title">
-                  <h2 class="mdl-card__title-text">{{hero1[0].name}}</h2>
-                </div>
-              </div>
-            </button>
-            <!--</md-grid-tile>-->
-
-            <!--<md-grid-tile>-->
-              <div class="versus">
-                <img src="https://www.spreadshirt.fr/image-server/v1/designs/12699381,width=178,height=178/eclair.png">
-                <p>VS</p>
-              </div>
-            <!--</md-grid-tile>-->
-
-
-            <!--<md-grid-tile>-->
-            <button md-button>
-              <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
-                <div class="mdl-card__media">
-                  <img class="article-image" src="{{hero2[0].thumbnail}}" border="0" alt="">
-                </div>
-                <div class="mdl-card__title">
-                  <h2 class="mdl-card__title-text">{{hero2[0].name}}</h2>
-                </div>
-              </div>
-            </button>
-            <!--</md-grid-tile>-->
-          <!--</md-grid-list>-->
-
+        <button (click)="clicked($event)" md-button>
+          <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card" ng-class="myclass"
+               ng-mouseleave="myclass = 'lowlight'">
+            <div class="mdl-card__media">
+              <img class="article-image" src="{{hero1.thumbnail}}" border="0" alt="">
+            </div>
+            <div class="mdl-card__title">
+              <h2 class="mdl-card__title-text">{{hero1.name}}</h2>
+            </div>
+          </div>
+        </button>
+        <div class="versus">
+          <img src="https://www.spreadshirt.fr/image-server/v1/designs/12699381,width=178,height=178/eclair.png">
+          <p>VS</p>
+        </div>
+        <button md-button>
+          <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+            <div class="mdl-card__media">
+              <img class="article-image" src="{{hero2.thumbnail}}" border="0" alt="">
+            </div>
+            <div class="mdl-card__title">
+              <h2 class="mdl-card__title-text">{{hero2.name}}</h2>
+            </div>
+          </div>
+        </button>
       </div>
     </div>
   </div>

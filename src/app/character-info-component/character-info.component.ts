@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {CharacterService} from '../character.service';
 import {Character} from '../character';
@@ -10,7 +10,7 @@ import {Character} from '../character';
 })
 export class CharacterInfoComponent implements OnInit {
   id = this.route.snapshot.params['id'];
-  character: Character = new Character();
+  @Input() character: Character = new Character();
 
   constructor(private route: ActivatedRoute,
               private service: CharacterService) {}

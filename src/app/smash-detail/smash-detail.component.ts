@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CharacterService} from "../character.service";
+import {CharacterService} from '../character.service';
 import {Character} from '../character';
 
 @Component({
@@ -9,8 +9,8 @@ import {Character} from '../character';
 })
 export class SmashDetailComponent implements OnInit {
 
-  private hero1: Character = new Character();
-  private hero2: Character = new Character();
+  hero1: Character = new Character();
+  hero2: Character = new Character();
 
   constructor(private characterService: CharacterService) { }
 

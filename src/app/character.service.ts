@@ -55,14 +55,13 @@ export class CharacterService {
     return this.http.get(url)
       .toPromise()
       .then((response) => {
-        return response.json().data.results.map((value) => {
-          const char = new Character();
-          char.id = value.id;
-          char.name = value.name;
-          char.description = value.description;
-          char.thumbnail = value.thumbnail.path + '/portrait_incredible' + '.' + value.thumbnail.extension;
-          return char;
-        });
+        const value = response.json().data.results.shift();
+        const char = new Character();
+        char.id = value.id;
+        char.name = value.name;
+        char.description = value.description;
+        char.thumbnail = value.thumbnail.path + '/portrait_incredible' + '.' + value.thumbnail.extension;
+        return char;
       })
       .catch(CharacterService.handleError);
   }
