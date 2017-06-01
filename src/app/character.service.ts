@@ -31,7 +31,7 @@ export class CharacterService {
     return this.http.get(url)
       .toPromise()
       .then((response) => {
-      console.log(response.json().data.results);
+        console.log(response.json().data.results);
         return response.json().data.results.map((value) => {
           const char = new Character();
           char.id = value.id;
@@ -44,31 +44,29 @@ export class CharacterService {
       .catch(CharacterService.handleError);
   }
 
-    getRandomHero(limit: number = 1, offset: number = 0): Promise<Character[]> {
+  getRandomHero(limit: number = 1, offset: number = 0): Promise<Character> {
+    offset = Math.random() * (1485 - 1) + 1;
+    const url = this.heroesUrl +
+      '?ts=' + this.timestamp +
+      '&apikey=' + this.publicKey +
+      '&hash=' + this.getHash() +
+      '&limit=' + limit +
+      '&offset=' + offset;
 
-        offset = Math.random() * (1485 - 1) + 1;
-
-        const url = this.heroesUrl +
-            '?ts=' + this.timestamp +
-            '&apikey=' + this.publicKey +
-            '&hash=' + this.getHash() +
-            '&limit=' + limit +
-            '&offset=' + offset;
-
-        return this.http.get(url)
-            .toPromise()
-            .then((response) => {
-                return response.json().data.results.map((value) => {
-                    const char = new Character();
-                    char.id = value.id;
-                    char.name = value.name;
-                    char.description = value.description;
-                    char.thumbnail = value.thumbnail.path + '/portrait_incredible' + '.' + value.thumbnail.extension;
-                    return char;
-                });
-            })
-            .catch(CharacterService.handleError);
-    }
+    return this.http.get(url)
+      .toPromise()
+      .then((response) => {
+        return response.json().data.results.map((value) => {
+          const char = new Character();
+          char.id = value.id;
+          char.name = value.name;
+          char.description = value.description;
+          char.thumbnail = value.thumbnail.path + '/portrait_incredible' + '.' + value.thumbnail.extension;
+          return char;
+        });
+      })
+      .catch(CharacterService.handleError);
+  }
 
   getHeroById(id: string): Promise<Character> {
     const url = this.heroesUrl + '/' +

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CharacterService} from "../character.service";
+import {Character} from '../character';
 
 @Component({
   selector: 'app-smash-detail',
@@ -8,11 +9,25 @@ import {CharacterService} from "../character.service";
 })
 export class SmashDetailComponent implements OnInit {
 
-  hero1 = this.characterService.getRandomHero();
-  hero2 = this.characterService.getRandomHero();
+  private hero1: Character = new Character();
+  private hero2: Character = new Character();
+
   constructor(private characterService: CharacterService) { }
 
   ngOnInit() {
+    this.characterService.getRandomHero()
+      .then((data) => {
+          this.hero1 = data;
+      })
+      .catch((err) => {
+      console.log(err);
+      });
+    this.characterService.getRandomHero()
+      .then((data) => {
+          this.hero2 = data;
+      })
+      .catch((err) => {
+      console.log(err);
+      });
   }
-
 }
