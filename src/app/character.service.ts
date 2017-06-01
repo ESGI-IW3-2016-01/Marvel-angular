@@ -17,7 +17,7 @@ export class CharacterService {
     return Promise.reject(error.message || error);
   }
 
-  getHeroes(limit: number = 9, offset: number = 0): Promise<Character[]> {
+  getHeroes(limit: number = 20, offset: number = 0): Promise<Character[]> {
 
     offset = Math.random() * (1475 - 1) + 1;
 
@@ -31,6 +31,7 @@ export class CharacterService {
     return this.http.get(url)
       .toPromise()
       .then((response) => {
+      console.log(response.json().data.results);
         return response.json().data.results.map((value) => {
           const char = new Character();
           char.id = value.id;
