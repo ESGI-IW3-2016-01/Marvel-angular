@@ -1,6 +1,32 @@
-<p>
-  trivia-detail works!
-  <br>
+<section class="section--center mdl-grid site-max-width">
+  <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone  mdl-shadow--4dp" *ngFor="let trivia of trivias.__zone_symbol__value; let i = index">
+    <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text">Question n° {{ i+1 }}</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+      {{ trivia.question }}
+    </div>
+    <div class="mdl-card__actions  mdl-card--border">
+      <li *ngFor="let all_answer of trivia.all_answers">
+        <input type="radio" name="answer{{ i+1 }}" value="{{ all_answer}}">{{ all_answer}}<br>
+      </li>
+    </div>
+  </div>
 
-  {{ trivia | json }}
-</p>
+  <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone  mdl-shadow--4dp">
+    <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text">Your pseudo</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield">
+        <input class="mdl-textfield__input" pattern="[A-Z,a-z, ]*" id="Name" name="name" type="text">
+        <span class="mdl-textfield__error">Letters and spaces only</span>
+      </div>
+    </div>
+    <div class="mdl-card__actions  mdl-card--border">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" data-upgraded=",MaterialButton,MaterialRipple">
+        Validate
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+    </div>
+  </div>
+</section>
