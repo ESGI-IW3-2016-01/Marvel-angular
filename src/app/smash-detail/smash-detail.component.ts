@@ -69,5 +69,8 @@ export class SmashDetailComponent implements OnInit {
     document.getElementById("button1").setAttribute('disabled', 'disabled');
     document.getElementById("button2").setAttribute('disabled', 'disabled');
 
+    setTimeout(function(){
+      location.reload();
+    }, 2500);
   }
 }
