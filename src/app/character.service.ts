@@ -4,9 +4,13 @@ import {Md5Service} from './md5.service';
 import {Character} from './character';
 import 'rxjs/Rx';
 
+/**
+ * Character Service to manage Marvel API call
+ */
 @Injectable()
 export class CharacterService {
 
+  /* Hard-coded API Keys :( */
   private heroesUrl = 'http://gateway.marvel.com/v1/public/characters';
   private publicKey = 'ab8f5af2b5d4edfb5f910acdc0aa9d88';
   private privateKey = 'c7cac7d08f7eabc331c63c215a2fa5e240943a20';
@@ -101,8 +105,7 @@ export class CharacterService {
       .catch(CharacterService.handleError);
   }
 
-  constructor(private http: Http, private md5Service: Md5Service) {
-  }
+  constructor(private http: Http, private md5Service: Md5Service) {}
 
   private getHash() {
     return this.md5Service.md5(this.timestamp + this.privateKey + this.publicKey);

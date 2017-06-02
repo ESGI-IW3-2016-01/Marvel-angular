@@ -2,13 +2,19 @@ import { Injectable } from '@angular/core';
 import {Trivia} from './trivia';
 import {Http} from '@angular/http';
 
+/**
+ * Get Questions and Answers from OpenTriviaAPI
+ * https://opentdb.com/api_config.php
+ * Using Entertainment: Comics category only
+ */
 @Injectable()
 export class TriviaService {
 
+  /* URL to call */
   private triviaUrl = 'https://opentdb.com/api.php?amount=10&category=29';
 
   static handleError(error: any): Promise<any> {
-    console.error('An error occurred', error); // for demo purposes only
+    console.error('An error occurred', error);
     return Promise.reject(error.message || error);
   }
 

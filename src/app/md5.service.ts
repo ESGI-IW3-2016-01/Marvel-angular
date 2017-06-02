@@ -19,6 +19,9 @@
 
 import {Injectable} from '@angular/core';
 
+/**
+ * MD5 Service to calculate hash from string before Marvel API calls
+ */
 @Injectable()
 export class Md5Service {
 
