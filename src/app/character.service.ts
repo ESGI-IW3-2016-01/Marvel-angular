@@ -17,6 +17,7 @@ export class CharacterService {
     return Promise.reject(error.message || error);
   }
 
+  // call the api to retrieve heroes
   getHeroes(limit: number = 20, offset: number = 0): Promise<Character[]> {
 
     offset = Math.random() * (1475 - 1) + 1;
@@ -43,6 +44,7 @@ export class CharacterService {
       .catch(CharacterService.handleError);
   }
 
+  // call the api to random retrieve a hero
   getRandomHero(limit: number = 1, offset: number = 0): Promise<Character> {
     offset = Math.random() * (1485 - 1) + 1;
     const url = this.heroesUrl +
@@ -66,6 +68,7 @@ export class CharacterService {
       .catch(CharacterService.handleError);
   }
 
+  // call the api to retrieve a hero by identifier
   getHeroById(id: string): Promise<Character> {
     const url = this.heroesUrl + '/' +
       id +

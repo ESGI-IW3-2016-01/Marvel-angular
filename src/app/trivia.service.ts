@@ -12,6 +12,7 @@ export class TriviaService {
     return Promise.reject(error.message || error);
   }
 
+  // call the api to retrieve questions
   getTrivia(): Promise<Trivia[]> {
 
     return this.http.get(this.triviaUrl)
