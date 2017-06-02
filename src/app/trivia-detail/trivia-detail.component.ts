@@ -18,8 +18,11 @@ export class TriviaDetailComponent implements OnInit {
     this.getAll();
   }
 
+  // Validate answer
   clicked() {
     let result = 0;
+
+    // Get all answer
     for (let i = 0; i < 10; i++) {
       const choice = document.querySelector('input[name = "answer' + i + '"]:checked');
 
@@ -33,27 +36,35 @@ export class TriviaDetailComponent implements OnInit {
     }
     const name = ((<HTMLInputElement>document.getElementById('Name')).value);
 
-    if (name) {
-      let ranking = JSON.parse(localStorage.getItem(this.localStorageKey));
-      if (!ranking) {
-        ranking = [];
-      }
-      const player = {
-        'name' : name,
-        'result' : result.toString()
-      };
-      ranking.push(player);
-      localStorage.setItem(this.localStorageKey, JSON.stringify(ranking));
+    if (!name) {
+      alert('Pseudo is empty');
+      return false;
     }
+
+    let ranking = JSON.parse(localStorage.getItem(this.localStorageKey));
+    if (!ranking) {
+      ranking = [];
+    }
+
+    // Add player with a name and a result
+    const player = {
+      'name' : name,
+      'result' : result.toString()
+    };
+    ranking.push(player);
+    localStorage.setItem(this.localStorageKey, JSON.stringify(ranking));
+
     alert(result + ' correct answers');
     this.getAll();
     location.reload();
   }
 
+  // get ranking
   getAll() {
     this.currentRanking = JSON.parse(localStorage['ranking']).sort(this.tri);
   }
 
+  // Tri by result
   tri(a, b) {
   return b.result - a.result;
   }
