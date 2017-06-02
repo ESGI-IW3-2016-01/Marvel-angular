@@ -1,3 +1,7 @@
+/**
+ * Quizz Class
+ * Each Trivia is a Multiple Choice question
+ */
 export class Trivia {
   category: string;
   type: string;
