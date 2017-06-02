@@ -4,6 +4,25 @@
   </md-card-title>
   <img md-card-image src="{{ character.thumbnail }}">
   <md-card-content>
-    <p>{{ character.description }}</p>
+    <md-tab-group>
+      <md-tab label="Description">
+        <p>{{ character.description }}</p>
+      </md-tab>
+      <md-tab label="Stories">
+        <md-list *ngFor="let story of character.stories">
+          <md-list-item>{{ story }}</md-list-item>
+        </md-list>
+      </md-tab>
+      <md-tab label="Comics">
+        <md-list *ngFor="let comics of character.comics">
+          <md-list-item>{{ comics }}</md-list-item>
+        </md-list>
+      </md-tab>
+      <md-tab label="Series">
+        <md-list *ngFor="let serie of character.series">
+          <md-list-item>{{ serie }}</md-list-item>
+        </md-list>
+      </md-tab>
+    </md-tab-group>
   </md-card-content>
 </md-card>

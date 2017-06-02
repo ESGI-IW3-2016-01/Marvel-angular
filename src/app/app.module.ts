@@ -7,7 +7,10 @@ import {AppComponent} from './app.component';
 import {CharacterDetailComponent} from './character-detail/character-detail.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MdButtonModule, MdCardModule, MdCheckboxModule, MdGridListModule} from '@angular/material';
+import {
+  MdButtonModule, MdCardModule, MdCheckboxModule, MdGridListModule, MdListModule,
+  MdTabsModule
+} from '@angular/material';
 
 import {RouterModule} from '@angular/router';
 import {TriviaDetailComponent} from './trivia-detail/trivia-detail.component';
@@ -33,6 +36,8 @@ import {CharacterPanelComponent} from './character-panel/character-panel.compone
     MdCheckboxModule,
     MdCardModule,
     MdGridListModule,
+    MdListModule,
+    MdTabsModule,
     MdButtonModule,
     RouterModule.forRoot([
       {

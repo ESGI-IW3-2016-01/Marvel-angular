@@ -81,6 +81,18 @@ export class CharacterService {
         char.name = value.name;
         char.description = value.description;
         char.thumbnail = value.thumbnail.path + '/portrait_incredible' + '.' + value.thumbnail.extension;
+        char.comics = [];
+        char.series = [];
+        char.stories = [];
+        value.comics.items.forEach((element) => {
+          char.comics.push(element.name);
+        });
+        value.series.items.forEach((element) => {
+          char.series.push(element.name);
+        });
+        value.stories.items.forEach((element) => {
+          char.stories.push(element.name);
+        });
         return char as Character;
       })
       .catch(CharacterService.handleError);
