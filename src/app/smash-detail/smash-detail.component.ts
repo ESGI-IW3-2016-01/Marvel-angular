@@ -31,7 +31,7 @@ export class SmashDetailComponent implements OnInit {
       });
   }
 
-  clicked(heroId1, heroId2) {
+  clicked(heroId1, heroId2, position) {
     
     var localScoreHero1 = localStorage.getItem(heroId1); //Hero voté vainqueur
     var localScoreHero2 = localStorage.getItem(heroId2); //Hero perdant
@@ -56,6 +56,18 @@ export class SmashDetailComponent implements OnInit {
       pourcentHero2 = 0;
     }
 
+    document.getElementById("image1").style.opacity = "0.3";
+    document.getElementById("image2").style.opacity = "0.3";
+
+    if (position == 1) {
+      document.getElementById("pourcentText1").innerHTML = pourcentHero1.toFixed(0) + "%";
+      document.getElementById("pourcentText2").innerHTML = pourcentHero2.toFixed(0) + "%";
+    } else {
+      document.getElementById("pourcentText2").innerHTML = pourcentHero1.toFixed(0) + "%";
+      document.getElementById("pourcentText1").innerHTML = pourcentHero2.toFixed(0) + "%";
+    }
+    document.getElementById("button1").setAttribute('disabled', 'disabled');
+    document.getElementById("button2").setAttribute('disabled', 'disabled');
 
   }
 }

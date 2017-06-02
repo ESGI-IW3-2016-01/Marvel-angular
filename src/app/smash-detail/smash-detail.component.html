@@ -2,25 +2,31 @@
   <div class="site-content">
     <div class="container">
       <div class="mdl-grid site-max-width">
-        <button (click)="clicked(hero1.id,hero2.id)" md-button>
-          <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card" ng-class="myclass"
-               ng-mouseleave="myclass = 'lowlight'">
-            <div class="mdl-card__media">
-              <img class="article-image" src="{{hero1.thumbnail}}" border="0" alt="">
+        <button id="button1" (click)="clicked(hero1.id,hero2.id,1)" md-button>
+            <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card" ng-class="myclass"
+                 ng-mouseleave="myclass = 'lowlight'">
+              <div class="mdl-card__media">
+                <img id="image1" class="article-image" src="{{hero1.thumbnail}}" border="0" alt="">
+                <div class="middle">
+                  <div id="pourcentText1" class="pourcentText"></div>
+                </div>
+              </div>
+              <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text">{{hero1.name}}</h2>
+              </div>
             </div>
-            <div class="mdl-card__title">
-              <h2 class="mdl-card__title-text">{{hero1.name}}</h2>
-            </div>
-          </div>
         </button>
         <div class="versus">
           <img src="https://www.spreadshirt.fr/image-server/v1/designs/12699381,width=178,height=178/eclair.png">
           <p>VS</p>
         </div>
-        <button (click)="clicked(hero2.id,hero1.id)" md-button>
+        <button id="button2" (click)="clicked(hero2.id,hero1.id,2)" md-button>
           <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
             <div class="mdl-card__media">
-              <img class="article-image" src="{{hero2.thumbnail}}" border="0" alt="">
+              <img id="image2" class="article-image" src="{{hero2.thumbnail}}" border="0" alt="">
+              <div class="middle">
+                <div id="pourcentText2" class="pourcentText"></div>
+              </div>
             </div>
             <div class="mdl-card__title">
               <h2 class="mdl-card__title-text">{{hero2.name}}</h2>
