@@ -30,4 +30,32 @@ export class SmashDetailComponent implements OnInit {
       console.log(err);
       });
   }
+
+  clicked(heroId1, heroId2) {
+    
+    var localScoreHero1 = localStorage.getItem(heroId1); //Hero voté vainqueur
+    var localScoreHero2 = localStorage.getItem(heroId2); //Hero perdant
+
+    var scoreHero1 = parseInt(localScoreHero1, 10);
+    var scoreHero2 = parseInt(localScoreHero2, 10);
+
+    if(localScoreHero1!=null) {
+      scoreHero1++;
+    } else {
+      var scoreHero1 = 1;
+    }
+
+    var stringResult = scoreHero1.toString();
+    localStorage.setItem(heroId1,stringResult);
+
+    var pourcentHero1 = (scoreHero1/(scoreHero1+scoreHero2))*100;
+    var pourcentHero2 = (scoreHero2/(scoreHero1+scoreHero2))*100;
+
+    if(isNaN(pourcentHero1) || isNaN(pourcentHero2)) {
+      pourcentHero1 = 100;
+      pourcentHero2 = 0;
+    }
+
+
+  }
 }
